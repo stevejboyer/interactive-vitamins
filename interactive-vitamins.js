@@ -66,6 +66,7 @@
    var slideIndex = 0;
    var titleNodes = [];
    var pagerDots = [];
+   var infoRowNodes = [];
    var foodImagesContainer;
 
    document.onreadystatechange = function() {
@@ -89,6 +90,7 @@
       /* remove active classes */
       removeClass(titleNodes[slideIndex], 'iv-fade-in');
       removeClass(pagerDots[slideIndex], 'iv-pager-dot-active');
+      removeClass(infoRowNodes[slideIndex], 'iv-fade-in');
       if (movingRight) {
          slideIndex++;
          if (slideIndex > slides.length - 1) {
@@ -100,8 +102,9 @@
             slideIndex = slides.length - 1;
          }
       }
-      addClass(pagerDots[slideIndex], 'iv-pager-dot-active');
       addClass(titleNodes[slideIndex], 'iv-fade-in');
+      addClass(pagerDots[slideIndex], 'iv-pager-dot-active');
+      addClass(infoRowNodes[slideIndex], 'iv-fade-in');
 
       /* slide food image */
       foodImagesContainer.style = `width: ${200 *
@@ -146,9 +149,9 @@
       pager.className = 'iv-pager';
       root.appendChild(pager);
 
-      var infoRow = document.createElement('div');
-      infoRow.className = 'iv-info-row';
-      root.appendChild(infoRow);
+      var infoRowContainer = document.createElement('div');
+      infoRowContainer.className = 'iv-info-row-container';
+      root.appendChild(infoRowContainer);
 
       slides.forEach(function(slide, index) {
          /* titles */
@@ -179,6 +182,27 @@
          }`;
          pager.appendChild(pageDot);
          pagerDots.push(pageDot);
+
+         /* person and paragraph */
+         var infoNode = document.createElement('div');
+
+         var infoImgHTML = `<img class="iv-info-person" src="assets/image/${
+            slide.imageSourceRoot
+         }-person.png" />`;
+         var infoParagraphHTML = `<div class="iv-info-paragraph"><div>
+         ${slide.benefits}
+      </div><div>${slide.sources}</div></div>`;
+         var infoInnerHTML =
+            index % 2 === 0
+               ? infoImgHTML + infoParagraphHTML
+               : infoParagraphHTML + infoImgHTML;
+         infoNode.innerHTML = infoInnerHTML;
+
+         infoNode.className = `iv-info-row ${
+            index === slideIndex ? 'iv-fade-in' : ''
+         }`;
+         infoRowContainer.appendChild(infoNode);
+         infoRowNodes.push(infoNode);
       });
    }
 })();
