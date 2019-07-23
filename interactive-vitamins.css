@@ -1,0 +1,113 @@
+#interactive-vitamins-root {
+   width: 600px;
+   padding: 10px;
+   background-color: #59ccc5;
+   color: #cdf7f4;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.iv-title-container {
+   height: 120px;
+   margin-top: 15px;
+}
+
+.iv-title {
+   position: absolute;
+   left: 0;
+   right: 0;
+   opacity: 0;
+}
+
+.iv-food-row {
+   width: 100%;
+   height: 250px;
+   margin: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.iv-arrow {
+   padding-left: 20px;
+   padding-right: 20px;
+   width: 25px;
+   height: 25px;
+   border: solid 1px pink;
+}
+
+.iv-foods-container {
+   width: 200px;
+   height: 200px;
+   overflow: hidden;
+   position: relative;
+}
+
+.iv-food-images-container {
+   height: 100%;
+   transition-duration: 400ms;
+}
+
+.iv-food-images-container:after {
+   clear: both;
+}
+
+.iv-foods-img-box {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 190px;
+   height: 190px;
+   padding: 5px;
+   float: left;
+}
+
+.iv-food-img {
+   max-height: 100%;
+}
+
+.iv-pager {
+   height: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.iv-pager-dot {
+   width: 5px;
+   height: 5px;
+   border: solid 1px #cdf7f4;
+   border-radius: 5px;
+   margin: 2px;
+   transition-duration: 400ms;
+   background-color: rgba(205, 247, 244, 0);
+}
+
+.iv-pager-dot-active {
+   background-color: rgba(205, 247, 244, 1);
+}
+
+.iv-info-row {
+   height: 200px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.iv-info-row-image {
+   height: 100%;
+   max-height: 200px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+.iv-info-row-text {
+   width: 350px;
+}
+
+.iv-fade-in {
+   animation: fade-in 400ms forwards;
+}
