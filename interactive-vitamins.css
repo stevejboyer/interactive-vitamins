@@ -131,3 +131,10 @@
 .iv-fade-in {
    animation: fade-in 400ms forwards;
 }
+
+.iv-logo {
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   width: 35px;
+}

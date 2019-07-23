@@ -155,12 +155,17 @@
       infoRowContainer.className = 'iv-info-row-container';
       root.appendChild(infoRowContainer);
 
+      var logo = document.createElement('img');
+      logo.src = 'assets/image/logo.png';
+      logo.className = 'iv-logo';
+      root.appendChild(logo);
+
       slides.forEach(function(slide, index) {
          /* titles */
          var titleNode = document.createElement('div');
-         titleNode.innerHTML = `<span>${slide.title}</span><span>${
+         titleNode.innerHTML = `<div>${slide.title}</div><div>${
             slide.subtitle
-         }</span>`;
+         }</div>`;
          titleNode.className = `iv-title ${
             index === slideIndex ? 'iv-fade-in' : ''
          }`;
