@@ -123,7 +123,8 @@
       root.appendChild(foodRow);
 
       var leftArrow = document.createElement('div');
-      leftArrow.className = 'iv-arrow';
+      leftArrow.className = 'iv-arrow iv-arrow-left';
+      leftArrow.innerHTML = '<img src="assets/image/up-arrow.svg" />';
       foodRow.appendChild(leftArrow);
       leftArrow.onclick = function() {
          handleArrowClick(false);
@@ -139,7 +140,8 @@
       foodsContainer.appendChild(foodImagesContainer);
 
       var rightArrow = document.createElement('div');
-      rightArrow.className = 'iv-arrow';
+      rightArrow.className = 'iv-arrow iv-arrow-right';
+      rightArrow.innerHTML = '<img src="assets/image/up-arrow.svg" />';
       foodRow.appendChild(rightArrow);
       rightArrow.onclick = function() {
          handleArrowClick(true);

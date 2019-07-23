@@ -32,11 +32,26 @@
 }
 
 .iv-arrow {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 50px;
+   height: 50px;
    padding-left: 20px;
    padding-right: 20px;
+}
+
+.iv-arrow img {
    width: 25px;
    height: 25px;
-   border: solid 1px pink;
+}
+
+.iv-arrow-left {
+   transform: rotate(-90deg);
+}
+
+.iv-arrow-right {
+   transform: rotate(90deg);
 }
 
 .iv-foods-container {
